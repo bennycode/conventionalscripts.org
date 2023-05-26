@@ -1,0 +1,34 @@
+{
+  "name": "stasis-basic-example",
+  "version": "1.0.0",
+  "description": "This is a basic example project for the Stasis static site generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "stasis-cli build -c stasis.config.json src",
+    "serve": "stasis-cli serve -c stasis.config.json src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gioni06/stasis-basic-example.git"
+  },
+  "keywords": [
+    "Stasis",
+    "Static",
+    "Site",
+    "Generator",
+    "Example"
+  ],
+  "author": "Jonas Duri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gioni06/stasis-basic-example/issues"
+  },
+  "homepage": "https://github.com/Gioni06/stasis-basic-example#readme",
+  "devDependencies": {
+    "sass": "^1.17.2"
+  },
+  "dependencies": {
+    "stasis-generator": "^0.3.2"
+  }
+}

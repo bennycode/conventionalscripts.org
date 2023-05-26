@@ -1,0 +1,10 @@
+{
+	"sourcePath": "src",
+	"publicPath": "dist",
+	"assetsPath": "assets",
+	"staticPath": "static",
+	"graphQlPath": "graphql",
+	"entryAssets": [
+		"**/*"
+	]
+}

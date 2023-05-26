@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" />
+	<title>{{meta.title}}</title>
+</head>
+<body class="terminal">
+	<div class="container">
+		<div class="terminal-nav">
+			<div class="terminal-logo">
+			<div class="logo terminal-prompt"><a href="/" class="no-style">Stasis Example Project</a></div>
+			</div>
+			<nav class="terminal-menu">
+			<ul>
+				<li><a class="menu-item" href="/blog">Blog</a></li>
+			</ul>
+			</nav>
+		</div>
+		<main>
+            <div>
+                {{{body}}}
+            </div>
+			<ol class="terminal-toc">
+                {{#each this.query.data.posts}}
+                    <li><a href="{{this.relativePath}}">{{this.frontmatter.title}}</a></li>
+                {{/each}}
+			</ol>
+		</main>
+	</div>
+</body>
+</html>
