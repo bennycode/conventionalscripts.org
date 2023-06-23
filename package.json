@@ -30,7 +30,6 @@
   },
   "scripts": {
     "build": "stasis-cli build -c stasis.config.json src",
-    "changelog": "exit 0",
     "check": "run-p check:*",
     "check:format": "npx prettier --ignore-path .gitignore .",
     "check:lint": "npx eslint --ext .js .",
@@ -42,6 +41,7 @@
     "fix": "run-p fix:*",
     "fix:format": "npm run check:format -- --write",
     "fix:lint": "npm run check:lint -- --fix",
+    "log": "exit 0",
     "start": "stasis-cli serve -c stasis.config.json src",
     "test": "exit 0"
   },

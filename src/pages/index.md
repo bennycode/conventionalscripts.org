@@ -42,13 +42,13 @@ A category can serve the purpose of executing a single tool, or when utilizing t
 The Conventional Scripts specification defines the following categories:
 
 1. **build:** Used to automate the process of building or preparing an application to be started or deployed.
-1. **changelog:** Used to generate or update a changelog file for the package.
 1. **check:** Used to run code quality tools, such as linters or spellcheckers, on the package's source code.
 1. **clean:** Used to remove generated or temporary files and directories from the package.
 1. **deploy:** Used to execute the necessary steps required to deploy an application.
 1. **dev:** Used to automate the development environment setup or run the application with debugging capabilities (e.g., `node --inspect`).
 1. **docs:** Used to generate or build documentation for the package.
 1. **fix:** Used to automatically fix or correct code issues.
+1. **log:** Used to generate or update a changelog file for the package.
 1. **[start](https://docs.npmjs.com/cli/v9/using-npm/scripts#npm-start):** Used to start an application.
 1. **[test](https://docs.npmjs.com/cli/v9/using-npm/scripts#npm-test):** Used to automate the execution of tests for the project.
 
@@ -62,13 +62,13 @@ Below, you can find a configuration using Conventional Scripts categories withou
 {
   "scripts": {
     "build": "stasis-cli build -c stasis.config.json src",
-    "changelog": "generate-changelog -M",
     "check": "npx eslint --ext .js .",
     "clean": "rimraf dist",
     "deploy": "gh-pages -d dist",
     "dev": "node --inspect -r ts-node/register src/start.ts",
     "docs": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
     "fix": "npm run check -- --fix",
+    "log": "generate-changelog -M",
     "start": "stasis-cli serve -c stasis.config.json src",
     "test": "jest src --passWithNoTests"
   }
@@ -182,20 +182,20 @@ Even if you do not have a specific need for a category, we strongly recommend de
 {
   "scripts": {
     "build": "exit 0",
-    "changelog": "exit 0",
     "check": "exit 0",
     "clean": "exit 0",
     "deploy": "exit 0",
     "dev": "exit 0",
     "docs": "exit 0",
     "fix": "exit 0",
+    "log": "exit 0",
     "start": "node src/server.js",
     "test": "exit 0"
   }
 }
 ```
 
-Without placeholder scripts, developers will need to execute your scripts with additional flags like `npm run changelog --if-present` to avoid encountering errors.
+Without placeholder scripts, developers will need to execute your scripts with additional flags like `npm run deploy --if-present` to avoid encountering errors.
 
 ## Feedback
 
