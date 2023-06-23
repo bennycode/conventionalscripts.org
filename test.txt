@@ -1,0 +1,28 @@
+- fix: "npm run fix:format && npm run fix:lint"
+- fix:code
+- fix:format
+- fix:spelling
+- lint encapsualtes
+- lint:code -> eslint
+- lint:format -> prettier
+- lint:spelling -> cspell
+
+- test*
+- test:e2e
+- test:unit
+
+
+1. build: Used to automate the process of building or preparing your application for production or deployment
+1. changelog: Used to generate or update a changelog file for your package
+1. clean: Used to remove generated or temporary files and directories from your package
+1. debug: Used to enable debugging capabilities (i.e. `node --inspect`) for your package
+1. deploy: Used to execute the necessary steps required to deploy your application
+1. dev: Used to automate the development environment setup or run your application in a development stage
+1. docs: Used to generate or build documentation for your package
+1. fix: Used to automatically fix or correct code issues
+1. lint: Used to run a linter tool on your package's source code
+1. [restart](https://docs.npmjs.com/cli/commands/npm-restart): Used to restart your application
+1. [start](https://docs.npmjs.com/cli/commands/npm-start): Used to start your application
+1. [stop](https://docs.npmjs.com/cli/commands/npm-stop): Used to stop your application
+1. [test](https://docs.npmjs.com/cli/v9/using-npm/scripts#npm-test): Used to automate the execution of tests for your project
+

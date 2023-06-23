@@ -1,16 +1,18 @@
 {
-  "name": "stasis-basic-example",
-  "version": "1.0.0",
-  "description": "This is a basic example project for the Stasis static site generator",
-  "main": "index.js",
-  "scripts": {
-    "build": "stasis-cli build -c stasis.config.json src",
-    "serve": "stasis-cli serve -c stasis.config.json src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "stasis-generator": "^0.3.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Gioni06/stasis-basic-example.git"
+  "description": "This is a basic example project for the Stasis static site generator",
+  "devDependencies": {
+    "cspell": "^6.31.1",
+    "eslint": "^8.41.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1"
   },
   "keywords": [
     "Stasis",
@@ -19,16 +21,29 @@
     "Generator",
     "Example"
   ],
-  "author": "Jonas Duri",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Gioni06/stasis-basic-example/issues"
+  "license": "MIT",
+  "main": "index.js",
+  "name": "stasis-basic-example",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennycode/conventionalscripts.org.git"
   },
-  "homepage": "https://github.com/Gioni06/stasis-basic-example#readme",
-  "devDependencies": {
-    "sass": "^1.17.2"
+  "scripts": {
+    "build": "stasis-cli build -c stasis.config.json src",
+    "changelog": "exit 0",
+    "check": "run-p check:*",
+    "check:format": "npx prettier --ignore-path .gitignore .",
+    "check:lint": "npx eslint --ext .js .",
+    "check:typo": "cspell -c .cspell.json \"*.md\"",
+    "clean": "exit 0",
+    "deploy": "exit 0",
+    "dev": "npm run start",
+    "docs": "exit 0",
+    "fix": "run-p fix:*",
+    "fix:format": "npm run check:format -- --write",
+    "fix:lint": "npm run check:lint -- --fix",
+    "start": "stasis-cli serve -c stasis.config.json src",
+    "test": "exit 0"
   },
-  "dependencies": {
-    "stasis-generator": "^0.3.2"
-  }
+  "version": "1.0.0"
 }

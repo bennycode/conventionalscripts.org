@@ -1,5 +1,16 @@
 $font-color: #151515;
 
 body {
-	color: $font-color
+  color: $font-color;
+  main {
+    h1 {
+      font-size: 2em !important;
+    }
+    h2 {
+      font-size: 1.5em !important;
+    }
+    h3 {
+      font-size: 1.17em !important;
+    }
+  }
 }
