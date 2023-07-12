@@ -17,6 +17,40 @@ query: '{
 
 The **Conventional Scripts** specification is a convention built on top of [npm scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts), aiming to streamline the naming of `scripts` within the `package.json` file for npm packages. It provides a consistent way for developers to set up their packages, execute common development tasks, and harmonize the development workflow. Inspired by [Conventional Commits](https://www.conventionalcommits.org/), this specification promotes a standardized approach to script naming.
 
+## TL;DR
+
+You can apply Conventional Scripts in your project with **3 simple steps**:
+
+1. Use the provided [Categories](./#categories) naming schema within your "package.json" file to structure your "scripts" section.
+1. Feel free to incorporate [subtypes](./#subtypes) or [configurations](./#configurations) as needed.
+1. When defining subtypes or configurations, focus on naming them based on their intended purpose rather than the tools used.
+
+Here's an example of a well-established scripts section following **Conventional Scripts**:
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "check": "npm run check:format -- --list-different && npm run check:lint",
+    "check:format": "prettier --ignore-path .gitignore --loglevel error .",
+    "check:lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
+    "clean": "rimraf .nyc_output coverage dist",
+    "deploy": "hexo deploy",
+    "dev": "node --inspect -r ts-node/register ./src/start.ts",
+    "docs": "typedoc src/index.ts",
+    "fix": "npm run fix:format && npm run fix:lint",
+    "fix:format": "npm run check:format --write",
+    "fix:lint": "npm run check:lint --fix --quiet",
+    "log": "git add CHANGELOG.md && git commit -m \"docs: updated CHANGELOG.md\"",
+    "start": "ts-node ./src/start.ts",
+    "test": "npm run test:types && npm run test:unit:coverage",
+    "test:types": "tsc --noEmit",
+    "test:unit": "cross-env NODE_ENV=test jest ./src --passWithNoTests",
+    "test:unit:coverage": "npm run test:unit --coverage"
+  }
+}
+```
+
 ## Script Naming Convention
 
 The Conventional Scripts specification defines a consistent structure for script names: `category[:subtype:configuration]`
@@ -127,7 +161,7 @@ Building upon the "check" subtypes, the "fix" subtypes leverage the results of t
 
 **Note:** Josh Goldberg has written an excellent article that effectively explains the [distinction between a formatter and a linter](https://blog.joshuakgoldberg.com/the-blurry-line-between-formatting-and-style/).
 
-## Configuration
+## Configurations
 
 Following Conventional Scripts, additional options can be added to subtypes. The naming principle still holds: it is advisable to name configurations based on their purpose rather than using names that are specific to the tools being executed.
 

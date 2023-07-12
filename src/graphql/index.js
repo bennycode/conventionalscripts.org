@@ -20,14 +20,14 @@ module.exports = {
 		date: String
 		layout: String
 	}
-	`;
+	`
   },
   createRoot: (pages, config) => {
     return {
       pages: () => pages,
       pageByIndex: args => pages[args.index],
       pageByTitle: args => pages.filter(p => p.frontmatter.tile === args.title),
-      posts: args => pages.filter(p => p.frontmatter.type === 'blog'),
-    };
-  },
-};
+      posts: args => pages.filter(p => p.frontmatter.type === 'blog')
+    }
+  }
+}
