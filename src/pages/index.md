@@ -62,7 +62,7 @@ Below, you can find a configuration using Conventional Scripts categories withou
 {
   "scripts": {
     "build": "stasis-cli build -c stasis.config.json src",
-    "check": "npx eslint --ext .js .",
+    "check": "eslint --ext .js .",
     "clean": "rimraf dist",
     "deploy": "gh-pages -d dist",
     "dev": "node --inspect -r ts-node/register src/start.ts",
@@ -123,8 +123,8 @@ Building upon the "check" types, the "fix" types leverage the results of the che
 {
   "scripts": {
     "check": "run-p check:*",
-    "check:format": "npx prettier --ignore-path .gitignore .",
-    "check:lint": "npx eslint --ext .js .",
+    "check:format": "prettier --ignore-path .gitignore .",
+    "check:lint": "eslint --ext .js .",
     "check:typo": "cspell -c .cspell.json \"*.md\"",
     "fix": "run-p fix:*",
     "fix:format": "npm run check:format -- --write",
@@ -146,7 +146,7 @@ Here's an example:
   "scripts": {
     "test": "npm run test:unit",
     "test:unit": "jest ./src --passWithNoTests",
-    "test:unit:coverage": "npx run test:unit --coverage"
+    "test:unit:coverage": "npm run test:unit --coverage"
   }
 }
 ```
