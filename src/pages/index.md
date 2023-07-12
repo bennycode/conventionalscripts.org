@@ -17,27 +17,19 @@ query: '{
 
 The **Conventional Scripts** specification is a convention built on top of [npm scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts), aiming to streamline the naming of `scripts` within the `package.json` file for npm packages. It provides a consistent way for developers to set up their packages, execute common development tasks, and harmonize the development workflow. Inspired by [Conventional Commits](https://www.conventionalcommits.org/), this specification promotes a standardized approach to script naming.
 
-## Applications & Libraries
-
-This specification distinguishes between applications and libraries. An **application** refers to a CLI, website, or web application that is intended to be executed.
-
-On the other hand, a **library** refers to a collection of reusable code and functionalities that are packaged together and made available for developers to use in their applications.
-
-While an application can depend on libraries, it is not considered a library itself. In contrast to libraries, applications can be deployed and started. Consequently, they typically include a `deploy` and `start` script.
-
 ## Script Naming Convention
 
-The Conventional Scripts specification defines a consistent structure for script names: `category[:type:configuration]`
+The Conventional Scripts specification defines a consistent structure for script names: `category[:subtype:configuration]`
 
 Each part of the structure serves a specific purpose:
 
 1. **Category:** Groups scripts of a common type and is mandatory. It identifies the general purpose or action performed by the script.
-2. **Type:** Optional and used when multiple scripts of the same category are needed. It helps differentiate similar scripts within a category.
-3. **Configuration:** Optional and used to create scripts that pass optional parameters or options to existing types.
+2. **Subtype:** Optional and used when multiple scripts of the same category are needed. It helps differentiate similar scripts within a category.
+3. **Configuration:** Optional and used to create scripts that pass optional parameters or options to existing subtypes.
 
 ## Categories
 
-A category can serve the purpose of executing a single tool, or when utilizing types, it can act as a parent script to execute all types within a shared category.
+A category can serve the purpose of executing a single tool, or when utilizing subtypes, it can act as a parent script to execute all subtypes within a shared category.
 
 The Conventional Scripts specification defines the following categories:
 
@@ -56,7 +48,7 @@ The Conventional Scripts specification defines the following categories:
 
 **Example:**
 
-Below, you can find a configuration using Conventional Scripts categories without types:
+Below, you can find a configuration using Conventional Scripts categories without subtypes:
 
 ```json
 {
@@ -75,13 +67,13 @@ Below, you can find a configuration using Conventional Scripts categories withou
 }
 ```
 
-## Types
+## Subtypes
 
-Depending on your requirements, there may be a need for multiple tools within a specific category. For instance, when performing code testing, you may have various levels of tests, such as type testing, unit testing, and end-to-end testing. To accommodate this scenario, Conventional Scripts introduces the concept of types.
+Depending on your requirements, there may be a need for multiple tools within a specific category. For instance, when performing code testing, you may have various levels of tests, such as type testing, unit testing, and end-to-end testing. To accommodate this scenario, Conventional Scripts introduces the concept of subtypes.
 
-**Types** allow for differentiation of scripts within the Conventional Scripts categories, enabling you to specify different tools or approaches for distinct testing levels.
+**Subtypes** allow for differentiation of scripts within the Conventional Scripts categories, enabling you to specify different tools or approaches for distinct testing levels.
 
-While the Conventional Scripts specification does not prescribe specific type names, it promotes the practice of naming scripts based on the actions or concerns they address. This approach allows for better clarity and flexibility when switching between tools. Below is an example demonstrating this convention.
+While the Conventional Scripts specification does not prescribe specific subtype names, it promotes the practice of naming scripts based on the actions or concerns they address. This approach allows for better clarity and flexibility when switching between tools. Below is an example demonstrating this convention.
 
 **Good Example 😃:**
 
@@ -117,7 +109,7 @@ In the given code, the scripts are named after specific tools, which tightly cou
 
 The following code demonstrates a symbiotic relationship between the "check" and "format" categories. The "check" types encompass various tests related to code formatting, static analysis, and spelling.
 
-Building upon the "check" types, the "fix" types leverage the results of the checks to automatically correct any identified issues, whenever possible:
+Building upon the "check" subtypes, the "fix" subtypes leverage the results of the checks to automatically correct any identified issues, whenever possible:
 
 ```json
 {
@@ -137,7 +129,7 @@ Building upon the "check" types, the "fix" types leverage the results of the che
 
 ## Configuration
 
-Following Conventional Scripts, additional options can be added to types. The naming principle still holds: it is advisable to name configurations based on their purpose rather than using names that are specific to the tools being executed.
+Following Conventional Scripts, additional options can be added to subtypes. The naming principle still holds: it is advisable to name configurations based on their purpose rather than using names that are specific to the tools being executed.
 
 Here's an example:
 
@@ -157,7 +149,7 @@ In the example above, the `"test:unit:coverage"` script includes a configuration
 
 ### Shorthand Helpers
 
-To execute all types of a certain category, popular packages like [Prettier](https://prettier.io/) use shorthand helpers like [npm-run-all](https://www.npmjs.com/package/npm-run-all) ([source](https://github.com/prettier/prettier/blob/2.8.8/package.json#L155)). With helpers like these, the maintenance becomes significantly easier, as wildcards can be employed. This eliminates the need to update the **category** every time new **types** are added to the scripts section.
+To execute all subtypes of a certain category, popular packages like [Prettier](https://prettier.io/) use shorthand helpers like [npm-run-all](https://www.npmjs.com/package/npm-run-all) ([source](https://github.com/prettier/prettier/blob/2.8.8/package.json#L155)). With helpers like these, the maintenance becomes significantly easier, as wildcards can be employed. This eliminates the need to update the **category** every time new **subtypes** are added to the scripts section.
 
 **Example:**
 
