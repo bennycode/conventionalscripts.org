@@ -22,7 +22,7 @@ The **Conventional Scripts** specification is a convention built on top of [npm 
 You can apply Conventional Scripts in your project with **3 simple steps**:
 
 1. Use the provided [Categories](./#categories) naming schema within your "package.json" file to structure your "scripts" section.
-1. Feel free to incorporate [subtypes](./#subtypes) or [configurations](./#configurations) as needed.
+1. Feel free to incorporate [Subtypes](./#subtypes) or [Configurations](./#configurations) as needed.
 1. When defining subtypes or configurations, focus on naming them based on their intended purpose rather than the tools used.
 
 Here's an example of a well-established scripts section following **Conventional Scripts**:
