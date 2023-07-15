@@ -13,16 +13,16 @@ query: '{
 
 # Conventional Scripts
 
-## Introduction
+## Introduction [🔗](#introduction)
 
 The **Conventional Scripts** specification is a convention built on top of [npm scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts), aiming to streamline the naming of `scripts` within the `package.json` file for npm packages. It provides a consistent way for developers to set up their packages, execute common development tasks, and harmonize the development workflow. Inspired by [Conventional Commits](https://www.conventionalcommits.org/), this specification promotes a standardized approach to script naming.
 
-## TL;DR
+## TL;DR [🔗](#tldr)
 
 You can apply Conventional Scripts in your project with **3 simple steps**:
 
-1. Use the provided [Categories](./#categories) naming schema within your "package.json" file to structure your "scripts" section.
-1. Feel free to incorporate [Subtypes](./#subtypes) or [Configurations](./#configurations) as needed.
+1. Use the provided [Categories](#categories) naming schema within your "package.json" file to structure your "scripts" section.
+1. Feel free to incorporate [Subtypes](#subtypes) or [Configurations](#configurations) as needed.
 1. When defining subtypes or configurations, focus on naming them based on their intended purpose rather than the tools used.
 
 Here's an example of a well-established scripts section following **Conventional Scripts**:
@@ -51,7 +51,7 @@ Here's an example of a well-established scripts section following **Conventional
 }
 ```
 
-## Script Naming Convention
+## Script Naming Convention [🔗](#script-naming-convention)
 
 The Conventional Scripts specification defines a consistent structure for script names: `category[:subtype:configuration]`
 
@@ -61,7 +61,7 @@ Each part of the structure serves a specific purpose:
 2. **Subtype:** Optional and used when multiple scripts of the same category are needed. It helps differentiate similar scripts within a category.
 3. **Configuration:** Optional and used to create scripts that pass optional parameters or options to existing subtypes.
 
-## Categories
+## Categories [🔗](#categories)
 
 A category can serve the purpose of executing a single tool, or when utilizing subtypes, it can act as a parent script to execute all subtypes within a shared category.
 
@@ -101,7 +101,7 @@ Below, you can find a configuration using Conventional Scripts categories withou
 }
 ```
 
-## Subtypes
+## Subtypes [🔗](#subtypes)
 
 Depending on your requirements, there may be a need for multiple tools within a specific category. For instance, when performing code testing, you may have various levels of tests, such as type testing, unit testing, and end-to-end testing. To accommodate this scenario, Conventional Scripts introduces the concept of subtypes.
 
@@ -161,7 +161,7 @@ Building upon the "check" subtypes, the "fix" subtypes leverage the results of t
 
 **Note:** Josh Goldberg has written an excellent article that effectively explains the [distinction between a formatter and a linter](https://blog.joshuakgoldberg.com/the-blurry-line-between-formatting-and-style/).
 
-## Configurations
+## Configurations [🔗](#configurations)
 
 Following Conventional Scripts, additional options can be added to subtypes. The naming principle still holds: it is advisable to name configurations based on their purpose rather than using names that are specific to the tools being executed.
 
@@ -179,7 +179,7 @@ Here's an example:
 
 In the example above, the `"test:unit:coverage"` script includes a configuration that enables code coverage reports.
 
-## Best Practices
+## Best Practices [🔗](#best-practices)
 
 ### Shorthand Helpers
 
@@ -198,7 +198,7 @@ To execute all subtypes of a certain category, popular packages like [Prettier](
 }
 ```
 
-### Placeholder Scripts
+### Placeholder Scripts [🔗](#placeholder-scripts)
 
 Even if you do not have a specific need for a category, we strongly recommend defining it in your scripts (using `exit 0`) to prevent encountering a "Missing script" error when your code is executed by a developer or CI tool that relies on Conventional Scripts. By including the category, you ensure that all required script references are available and avoid potential issues during execution.
 
@@ -223,6 +223,6 @@ Even if you do not have a specific need for a category, we strongly recommend de
 
 Without placeholder scripts, developers will need to execute your scripts with additional flags like `npm run deploy --if-present` to avoid encountering errors.
 
-## Feedback
+## Feedback [🔗](#feedback)
 
-We welcome feedback on the proposed script names and appreciate it if you provide it through our [GitHub repository](https://github.com/bennycode/conventionalscripts.org). We are open to receiving pull requests for fixing typos and improving descriptions. Your contributions and suggestions are valuable to us, and we encourage your active participation in enhancing the specification. 📝
+We welcome all kind of healthy feedback regarding this specification. Feel free to participate in our [GitHub discussions](https://github.com/bennycode/conventionalscripts.org/discussions). 🪴
