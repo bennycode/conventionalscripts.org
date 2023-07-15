@@ -225,4 +225,4 @@ Without placeholder scripts, developers will need to execute your scripts with a
 
 ## Feedback&nbsp;[🔗](#feedback)
 
-All forms of constructive feedback is welcome. Please feel free to join our [discussions on GitHub](https://github.com/bennycode/conventionalscripts.org/discussions). We also encourage you to [open pull requests](https://github.com/bennycode/conventionalscripts.org/pulls) for fixing any typos or enhancing the descriptions. Your contributions in this regard are most welcome and will be greatly appreciated. 🪴
+All forms of constructive feedback is welcome. Please feel free to join our [discussions on GitHub](https://github.com/bennycode/conventionalscripts.org/discussions). We also encourage you to [open pull requests](https://github.com/bennycode/conventionalscripts.org) for fixing any typos or enhancing the descriptions. Your contributions in this regard are most welcome and will be greatly appreciated. 🪴
