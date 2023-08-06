@@ -87,16 +87,16 @@ Below, you can find a configuration using Conventional Scripts categories withou
 ```json
 {
   "scripts": {
-    "build": "stasis-cli build -c stasis.config.json src",
-    "check": "eslint --ext .js .",
-    "clean": "rimraf dist",
-    "deploy": "gh-pages -d dist",
-    "dev": "node --inspect -r ts-node/register src/start.ts",
-    "docs": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-github-wiki-theme",
+    "build": "webpack ...",
+    "check": "eslint ...",
+    "clean": "rimraf ...",
+    "deploy": "gh-pages ...",
+    "dev": "node ...",
+    "docs": "typedoc ...",
     "fix": "npm run check -- --fix",
-    "log": "generate-changelog -M",
-    "start": "stasis-cli serve -c stasis.config.json src",
-    "test": "jest src --passWithNoTests"
+    "log": "generate-changelog ...",
+    "start": "ts-node-esm ...",
+    "test": "jest ..."
   }
 }
 ```
