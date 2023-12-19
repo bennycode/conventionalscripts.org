@@ -190,7 +190,7 @@ To execute all subtypes of a certain category, popular packages like [Prettier](
 ```json
 {
   "scripts": {
-    "test": "run-p lint:*",
+    "test": "run-p test:*",
     "test:e2e": "playwright test",
     "test:type": "tsc --noEmit",
     "test:unit": "jest ./src --passWithNoTests"
